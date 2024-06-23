@@ -49,6 +49,7 @@
             SONAR_HOST_URL: ${{ secrets.SONAR_URL }}
 
     BUILD_AND_PUBLISH:
+      needs: Testing # to trigger the build_and_publish after testing job
       runs-on: ubuntu-latest
       steps:
         - name: Code checkout
